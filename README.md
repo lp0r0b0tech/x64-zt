@@ -33,6 +33,10 @@ Check out the [Aurora Zonetool Basics](https://docs.auroramod.dev/zonetool-basic
   * `skip common`: Skips common zones when dumping a map, can be `true` or `false`.
   * `target game`: The game to convert the assets to.
 
+## S1 dumping limits
+
+The headless S1 dumper reserves four times the stock material pool: 46,592 entries for a stock limit of 11,648. This is finite headroom, not a measured guarantee for every zone combination. `dumpzone` keeps zones loaded; use `unloadzones` between independent dumps to release unloadable zones. Renderer material-index limits are unchanged.
+
 ## Asset Conversion Support
 
 The table below shows which asset conversions are currently supported.

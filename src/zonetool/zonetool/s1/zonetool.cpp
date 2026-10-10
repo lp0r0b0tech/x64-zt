@@ -1454,6 +1454,8 @@ namespace zonetool::s1
 		ZONETOOL_INFO("ZoneTool is initializing...");
 
 		// reallocs
+		// Reserve material headroom for concurrently loaded dump zones.
+		reallocate_asset_pool_multiplier(ASSET_TYPE_MATERIAL, 4);
 		reallocate_asset_pool_multiplier(ASSET_TYPE_LUA_FILE, 2);
 		reallocate_asset_pool_multiplier(ASSET_TYPE_WEAPON, 2);
 		reallocate_asset_pool_multiplier(ASSET_TYPE_LOCALIZE_ENTRY, 2);
